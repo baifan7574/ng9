@@ -13,19 +13,28 @@ def update_sitemap():
     if not os.path.exists(sitemap_path):
         print("❌ 未找到 sitemap.xml，跳过此步骤。")
         return
+
     with open(sitemap_path, "r", encoding="utf-8") as f:
         lines = f.readlines()
 
     new_lines = []
-    for line in lines:
+    inside_url = False
+    for i, line in enumerate(lines):
+        stripped = line.strip()
         new_lines.append(line)
-        if "<loc>" in line and "<lastmod>" not in lines[lines.index(line)+1]:
-            new_lines.append(f"  <lastmod>{TODAY}</lastmod>\n")
-    
+
+        if stripped.startswith("<url>"):
+            inside_url = True
+        elif stripped.startswith("</url>") and inside_url:
+            # 检查前面有没有 lastmod，如果没有就加
+            has_lastmod = any("<lastmod>" in l for l in lines[i-5:i])
+            if not has_lastmod:
+                new_lines.insert(-1, f"    <lastmod>{TODAY}</lastmod>\n")
+            inside_url = False
+
     with open(sitemap_path, "w", encoding="utf-8") as f:
         f.writelines(new_lines)
-    print("✅ sitemap.xml 已添加 <lastmod> 字段")
-
+    print("✅ sitemap.xml 已正确添加 <lastmod> 字段")
 # 对 HTML 页面内容区域打散结构
 def shuffle_html_structure():
     html_files = [f for f in os.listdir(ROOT_DIR) if f.endswith(".html")]
