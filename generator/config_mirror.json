@@ -14,7 +14,7 @@
   "batch_size": 20,
   "total_images": 50,
   "seed": -1,
-  "prompt": "charming woman posing confidently in front of large ornate mirror, holding smartphone, elegant hairstyle, vintage bedroom setting, artistic reflection, warm ambient daylight, photorealistic portrait",
+  "prompt": "1girl, solo, single subject, one woman only\nphoto-realistic, ultra-detailed, cinematic portrait, 9:16 vertical, \nbeautiful young woman, elegant and attractive, natural beauty, \nunique facial features, subtle asymmetry allowed, realistic skin texture, \nhighly detailed eyes, sharp iris, glossy lips, natural nose, \nnatural expression, soft makeup, \nsoft studio light, rim light on hair, warm skin tone, \nprofessional photography style, depth of field, cinematic color grading, \nsharp focus, award-winning portrait photo, selfie mirror photo experiences, mirror selfie photo pose boy, mirror selfie poses girl standing, Kodak Portra vibe, dark shiny hair, silk slip dress, sensual vibe, elegant posture, tasteful composition",
   "negative_prompt": "face cropped, bad symmetry, lowres, cartoon, watermark, nude, messy room",
   "output_dir": "../mirror",
   "category": "mirror"
