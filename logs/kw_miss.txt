@@ -16,3 +16,16 @@ pages\shower.html
 pages\soft.html
 pages\uniform.html
 pages\single\index.html
+about.html
+contact.html
+googleaf4d2d986493bb7e.html
+index.html
+link_list.html
+privacy.html
+pages\dark.html
+pages\office.html
+pages\page1.html
+pages\page2.html
+pages\shower.html
+pages\soft.html
+pages\uniform.html
